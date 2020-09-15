@@ -1,16 +1,16 @@
-import React, { FC } from "react";
+import React from "react";
 
 import "./App.css";
 
 interface AppProps {
-	sendSearchQuery(): void;
+	sendSearchQuery?(): void;
 }
 
 // type AppProps = {
 // 	sendSearchQuery?(): void;
 // }
 
-const App: FC<AppProps> = ({ sendSearchQuery = () => undefined }) => {
+const App = ({ sendSearchQuery = () => undefined }: AppProps) => {
 	const [searchValue, setSearchValue] = React.useState<string>();
 
 	const onSearchInput = (event: React.ChangeEvent<HTMLInputElement>) => {
